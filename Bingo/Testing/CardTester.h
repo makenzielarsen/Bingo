@@ -5,4 +5,13 @@
 #ifndef BINGO_CARDTESTER_H
 #define BINGO_CARDTESTER_H
 
+class CardTester {
+public:
+
+    void cardConstructorTest();
+
+    void printCardTest();
+
+};
+
 #endif //BINGO_CARDTESTER_H
