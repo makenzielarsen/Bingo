@@ -5,6 +5,8 @@
 #ifndef BINGO_CARD_H
 #define BINGO_CARD_H
 
+#include <ostream>
+
 class Card {
 private:
     int m_cardSize;
@@ -17,8 +19,8 @@ private:
 public:
 
     Card(int cardSize, int maxNumber);
-
     int getGridNumber(int position);
+    void print(std::ostream& out) const;
 
 };
 

@@ -6,6 +6,7 @@
 
 int Card::generateRandomNumber(int m_maxNumber) {
 
+
 }
 
 Card::Card(int cardSize, int maxNumber) {
@@ -27,3 +28,21 @@ int Card::getGridNumber(int position) {
     return m_gridNumbers[position];
 }
 
+void Card::print(std::ostream& out) const {
+    //first line
+    for (int column = 0; column < m_cardSize; column++) {
+        out << "+----+";
+    }
+    out << std::endl;
+
+    int rowOffset = 0;
+    for (int row = 0; row < m_cardSize; row++) {
+        for (int column = 0; column < m_cardSize; column++) {
+            out << "| " << m_gridNumbers[column + rowOffset] << " ";
+        }
+        out << " |" << std::endl;
+        rowOffset += m_cardSize;
+    }
+
+    out << std::endl;
+}

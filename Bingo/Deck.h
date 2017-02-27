@@ -13,7 +13,8 @@
 class Deck {
 private:
     int m_cardCount;
-    Card* m_cards[m_cardCount];
+    const int m_constantCardCount = m_cardCount;
+    Card* m_cards[m_constantCardCount];
 
 public:
     Deck(int cardSize, int cardCount, int numberMax);

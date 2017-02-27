@@ -11,7 +11,7 @@ class Deck;
 
 class UserInterface {
 private:
-    Deck*   currentDeck = nullptr;
+    Deck* currentDeck = nullptr;
 
 public:
     void run();
