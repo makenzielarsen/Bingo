@@ -24,10 +24,6 @@ Card::Card(int cardSize, int maxNumber) {
     }
 }
 
-int Card::getGridNumber(int position) {
-    return m_gridNumbers[position];
-}
-
 void Card::print(std::ostream& out) const {
     //first line
     for (int column = 0; column < m_cardSize; column++) {

@@ -8,8 +8,6 @@
 #include <ostream>
 #include "Card.h"
 
-// TODO: Extend this definition as you see fit
-
 class Deck {
 private:
     int m_cardCount;

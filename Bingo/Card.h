@@ -19,7 +19,6 @@ private:
 public:
 
     Card(int cardSize, int maxNumber);
-    int getGridNumber(int position);
     void print(std::ostream& out) const;
 
 };
