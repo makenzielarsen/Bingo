@@ -5,7 +5,7 @@
 #include "Deck.h"
 
 Deck::Deck(int cardSize, int cardCount, int numberMax) {
-    if (cardSize > 3 && cardSize < 15 && cardCount > 3 && cardCount < 1000 &&  numberMax > (cardSize * cardSize) + 1) {
+    if (cardSize >= 3 && cardSize <= 15 && cardCount >= 3 && cardCount <= 1000 &&  numberMax >= (cardSize * cardSize) + 1) {
         m_cardCount = cardCount;
 
         for (int i = 0; i < cardCount; i++) {

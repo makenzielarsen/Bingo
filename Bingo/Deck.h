@@ -12,11 +12,12 @@ class Deck {
 private:
     int m_cardCount;
     const int m_constantCardCount = m_cardCount;
-    Card* m_cards[m_constantCardCount];
 
 public:
     Deck(int cardSize, int cardCount, int numberMax);
     ~Deck();
+
+    Card* m_cards[m_constantCardCount];
 
     void print(std::ostream& out) const;
     void print(std::ostream& out, int cardIndex) const;
