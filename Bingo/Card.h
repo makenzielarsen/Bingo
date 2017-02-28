@@ -21,6 +21,8 @@ public:
     Card(int cardSize, int maxNumber);
     void print(std::ostream& out) const;
 
+    int getNumbers[m_sizeSquared]() { return m_gridNumbers; }
+
 };
 
 
