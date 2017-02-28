@@ -15,7 +15,9 @@ Deck::Deck(int cardSize, int cardCount, int numberMax) {
 }
 
 Deck::~Deck() {
-    delete[]m_cards;
+    for (int card = 0; card < m_cardCount; card++) {
+        delete[]m_cards[card];
+    }
 }
 
 void Deck::print(std::ostream& out) const {
