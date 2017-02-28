@@ -10,9 +10,8 @@
 class Card {
 private:
     int m_cardSize;
-    int const m_sizeSquared = m_cardSize * m_cardSize;
+    int m_numberOfNumbers;
     int m_maxNumber;
-    int m_gridNumbers[m_sizeSquared];
 
     int generateRandomNumber (int m_maxNumber);
 
@@ -21,7 +20,7 @@ public:
     Card(int cardSize, int maxNumber);
     void print(std::ostream& out) const;
 
-    int getNumbers[m_sizeSquared]() { return m_gridNumbers; }
+    int m_gridNumbers[];
 
 };
 

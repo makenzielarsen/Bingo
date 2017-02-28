@@ -9,7 +9,7 @@
 
 void CardTester::cardConstructorTest() {
     Card goodCard(5, 26);
-    if (goodCard.getNumbers() == nullptr) {
+    if (goodCard.m_gridNumbers == nullptr) {
         std::cout << "Failure making number array" << std::endl;
     }
 }

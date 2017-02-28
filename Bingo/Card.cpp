@@ -6,14 +6,15 @@
 
 int Card::generateRandomNumber(int m_maxNumber) {
 
-
+    return 0;
 }
 
 Card::Card(int cardSize, int maxNumber) {
     m_cardSize = cardSize;
     m_maxNumber = maxNumber;
+    m_numberOfNumbers = m_cardSize * m_cardSize;
 
-    for (int i = 0; i < m_sizeSquared; i++) {
+    for (int i = 0; i < m_numberOfNumbers; i++) {
         int number = generateRandomNumber(m_maxNumber);
         for (int j = 0; j < i; j++) {
             while (m_gridNumbers[j] == number){
