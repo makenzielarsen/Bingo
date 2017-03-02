@@ -3,10 +3,12 @@
 //
 
 #include "Card.h"
+#include <iomanip>
 
 int Card::generateRandomNumber(int m_maxNumber) {
-
-    return 0;
+    int min = 1;
+    int max = m_maxNumber;
+    return min + rand() % (max - min);
 }
 
 Card::Card(int cardSize, int maxNumber) {
@@ -26,20 +28,24 @@ Card::Card(int cardSize, int maxNumber) {
 }
 
 void Card::print(std::ostream& out) const {
-    //first line
     for (int column = 0; column < m_cardSize; column++) {
-        out << "+----+";
+        out << "+----";
     }
-    out << std::endl;
+    out << "+" << std::endl;
 
     int rowOffset = 0;
     for (int row = 0; row < m_cardSize; row++) {
         for (int column = 0; column < m_cardSize; column++) {
-            out << "| " << m_gridNumbers[column + rowOffset] << " ";
+            out << "|" << std::setw(3) << m_gridNumbers[column + rowOffset] << " ";
         }
-        out << " |" << std::endl;
+        out << "|" << std::endl;
         rowOffset += m_cardSize;
     }
+
+    for (int column = 0; column < m_cardSize; column++) {
+        out << "+----";
+    }
+    out << "+" << std::endl;
 
     out << std::endl;
 }

@@ -15,8 +15,10 @@ Deck::Deck(int cardSize, int cardCount, int numberMax) {
 }
 
 Deck::~Deck() {
-    for (int card = 0; card < m_cardCount; card++) {
-        delete[]m_cards[card];
+    if (m_cards) {
+        for (int card = 0; card < m_cardCount; card++) {
+//            delete[]m_cards[card];
+        }
     }
 }
 
