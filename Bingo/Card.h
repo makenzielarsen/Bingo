@@ -6,6 +6,7 @@
 #define BINGO_CARD_H
 
 #include <ostream>
+#include <vector>
 
 class Card {
 private:
@@ -20,7 +21,7 @@ public:
     Card(int cardSize, int maxNumber);
     void print(std::ostream& out) const;
 
-    int m_gridNumbers[];
+    std::vector<int> m_gridNumbers;
 
 };
 

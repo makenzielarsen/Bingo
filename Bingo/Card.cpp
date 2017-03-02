@@ -23,7 +23,7 @@ Card::Card(int cardSize, int maxNumber) {
                 number = generateRandomNumber(maxNumber);
             }
         }
-        m_gridNumbers[i] = number;
+        m_gridNumbers.push_back(number);
     }
 }
 

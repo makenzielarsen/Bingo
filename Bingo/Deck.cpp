@@ -24,13 +24,13 @@ Deck::~Deck() {
 
 void Deck::print(std::ostream& out) const {
     for (int card = 0; card < m_cardCount; card++) {
-        out << "Card #" << card << std::endl;
+        out << "Card #" << card + 1 << std::endl;
         m_cards[card]->print(out);
     }
 }
 
 void Deck::print(std::ostream& out, int cardIndex) const {
-    out << "Card #" << cardIndex << std::endl;
+    out << "Card #" << cardIndex + 1 << std::endl;
     m_cards[cardIndex]->print(out);
 }
 
