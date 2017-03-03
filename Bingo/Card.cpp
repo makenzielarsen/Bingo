@@ -32,7 +32,6 @@ bool Card::hasValue(int x) {
     return false;
 }
 
-
 void Card::print(std::ostream& out) const {
     for (int column = 0; column < m_cardSize; column++) {
         out << "+----";

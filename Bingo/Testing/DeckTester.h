@@ -7,11 +7,7 @@
 
 class DeckTester{
 public:
-    void deckConstructorTest();
-
-    void printEntireDeckTest();
-
-    void printSingleCardTest();
+    void runTests();
 
 };
 

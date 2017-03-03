@@ -8,13 +8,14 @@
 #include "../Menu.h"
 
 #include <iostream>
+#include "Test.h"
 
 void MenuTester::testConstructorAndGetter()
 {
-    std::cout << std::endl  << "Test Suite: MenuTester::testConstructorAndGetter" << std::endl;
+    std::cout << "-------------" << std::endl;
+    std::cout << "Menu Tests" << std::endl;
 
     {
-        std::cout << "Test case 1" << std::endl;
 
         Menu menu("Deck");
         menu.addOption("A", "Test option A");
@@ -24,94 +25,53 @@ void MenuTester::testConstructorAndGetter()
         menu.addOption("E", "Test option E");
 
 
-        if (menu.getHeader()=="Main")
-        {
-            std::cout << "Failure in constructor: unexpected value for getHeader of " << menu.getHeader() << std::endl;
-            return;
-        }
-        if (menu.getOptionCount()==3)
-        {
-            std::cout << "Failure in constructor: unexpected value for getOptionCount of " << menu.getOptionCount() << std::endl;
-            return;
-        }
+        TEST(menu.getHeader(), "Deck");
+
+        TEST(menu.getOptionCount(), 5);
+
         const MenuOption* option = menu.getOption(0);
-        if (option==nullptr || option->getCommand()!="A" || option->getDescription()!="Test option A")
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NOT_NULL(option)
+        TEST(option->getCommand(), "A")
+        TEST(option->getDescription(), "Test option A")
 
         option = menu.getOption(1);
-        if (option==nullptr || option->getCommand()!="B" || option->getDescription()!="Test option B")
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NOT_NULL(option)
+        TEST(option->getCommand(), "B")
+        TEST(option->getDescription(), "Test option B")
 
         option = menu.getOption(2);
-        if (option==nullptr || option->getCommand()!="C" || option->getDescription()!="Test option C")
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NOT_NULL(option)
+        TEST(option->getCommand(), "C")
+        TEST(option->getDescription(), "Test option C")
 
         option = menu.getOption(3);
-        if (option==nullptr || option->getCommand()!="D" || option->getDescription()!="Test option D")
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NOT_NULL(option)
+        TEST(option->getCommand(), "D")
+        TEST(option->getDescription(), "Test option D")
 
         option = menu.getOption(4);
-        if (option==nullptr || option->getCommand()!="E" || option->getDescription()!="Test option E")
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NOT_NULL(option)
+        TEST(option->getCommand(), "E")
+        TEST(option->getDescription(), "Test option E")
 
         option = menu.getOption(-1);
-        if (option!=nullptr)
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NULL(option)
 
         option = menu.getOption(5);
-        if (option!=nullptr)
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NULL(option)
     }
 
     {
-        std::cout << "Test case 2" << std::endl;
 
         Menu menu("");
 
-        if (menu.getHeader()!="")
-        {
-            std::cout << "Failure in constructor: unexpected value for getHeader" << std::endl;
-            return;
-        }
-        if (menu.getOptionCount()!=0)
-        {
-            std::cout << "Failure in constructor: unexpected value for getOptionCount of " << menu.getOptionCount() << std::endl;
-            return;
-        }
+        TEST(menu.getHeader(), "")
+        TEST(menu.getOptionCount(), 0)
+
         const MenuOption* option = menu.getOption(0);
-        if (option!=nullptr)
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
+        TEST_NULL(option)
 
         option = menu.getOption(-1);
-        if (option!=nullptr)
-        {
-            std::cout << "Failure in constructor: unexpected option" << std::endl;
-            return;
-        }
-
+        TEST_NULL(option)
     }
 }

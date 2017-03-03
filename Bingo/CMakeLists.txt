@@ -13,7 +13,7 @@ add_executable(Bingo main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES
         Testing/MenuTester.cpp Testing/MenuTester.h
-        Testing/MenuOptionTester.cpp Testing/MenuOptionTester.h Testing/DeckTester.h Testing/DeckTester.cpp Testing/CardTester.h Testing/CardTester.cpp)
+        Testing/MenuOptionTester.cpp Testing/MenuOptionTester.h Testing/DeckTester.h Testing/DeckTester.cpp Testing/CardTester.h Testing/CardTester.cpp Testing/Test.h)
 
 add_executable(Test Testing/testMain.cpp ${SOURCE_FILES} ${TEST_FILES})
 

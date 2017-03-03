@@ -30,7 +30,7 @@ void Deck::print(std::ostream& out) const {
 }
 
 void Deck::print(std::ostream& out, int cardIndex) const {
-    out << "Card #" << cardIndex + 1 << std::endl;
-    m_cards[cardIndex]->print(out);
+    out << "Card #" << cardIndex << std::endl;
+    m_cards[cardIndex - 1]->print(out);
 }
 
