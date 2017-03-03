@@ -7,14 +7,38 @@
 #include "CardTester.h"
 #include "../Card.h"
 
-void CardTester::cardConstructorTest() {
+void cardSizeConstructorTest() {
     Card goodCard(5, 26);
-    if (goodCard.m_gridNumbers.size() != 0) {
-        std::cout << "Failure making number array" << std::endl;
+    auto actualSize = goodCard.m_gridNumbers.size();
+    if (actualSize != 25) {
+        std::cout << "Failed cardSizeConstructorTest: expecting 25, got " << actualSize << std::endl;
+    }
+    else {
+        std::cout << "Passed cardSizeConstructorTest" << std::endl;
     }
 }
 
-void CardTester::printCardTest() {
+void testHasValue() {
+    Card goodCard(3, 9);
+    auto hasValue = goodCard.hasValue(1);
+    if (hasValue != 1) {
+        std::cout << "Failed testHasValue: expecting true got " << hasValue << std::endl;
+    }
+    else {
+        std::cout << "Passed testHasValue" << std::endl;
+    }
+}
+
+
+
+void CardTester::runTests() {
+    std::cout << "-------------" << std::endl;
+    std::cout << "Card Tests" << std::endl;
+    cardSizeConstructorTest();
+    testHasValue();
+}
+
+void printCardTest() {
     Card cardOne(5, 26);
     cardOne.print(std::cout);
 

@@ -11,7 +11,6 @@
 class Card {
 private:
     int m_cardSize;
-    int m_numberOfNumbers;
     int m_maxNumber;
 
     int generateRandomNumber (int m_maxNumber);
@@ -23,6 +22,7 @@ public:
 
     std::vector<int> m_gridNumbers;
 
+    bool hasValue(int x);
 };
 
 

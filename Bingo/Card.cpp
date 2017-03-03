@@ -5,27 +5,33 @@
 #include "Card.h"
 #include <iomanip>
 
-int Card::generateRandomNumber(int m_maxNumber) {
-    int min = 1;
-    int max = m_maxNumber;
-    return min + rand() % (max - min);
+int Card::generateRandomNumber(int max) {
+    return rand() % max + 1;
 }
 
 Card::Card(int cardSize, int maxNumber) {
     m_cardSize = cardSize;
     m_maxNumber = maxNumber;
-    m_numberOfNumbers = m_cardSize * m_cardSize;
+    int numberOfNumbers = m_cardSize * m_cardSize;
 
-    for (int i = 0; i < m_numberOfNumbers; i++) {
-        int number = generateRandomNumber(m_maxNumber);
-        for (int j = 0; j < i; j++) {
-            while (m_gridNumbers[j] == number){
-                number = generateRandomNumber(maxNumber);
-            }
+    for (int i = 0; i < numberOfNumbers; i++) {
+        int number = generateRandomNumber(maxNumber);
+        while (hasValue(number)) {
+            number = generateRandomNumber(maxNumber);
         }
         m_gridNumbers.push_back(number);
     }
 }
+
+bool Card::hasValue(int x) {
+    for (int i = 0; i < m_gridNumbers.size(); i++) {
+        if (m_gridNumbers[i] == x) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 void Card::print(std::ostream& out) const {
     for (int column = 0; column < m_cardSize; column++) {

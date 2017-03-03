@@ -27,11 +27,10 @@ int main()
 
     DeckTester deckTester;
     deckTester.deckConstructorTest();
-    deckTester.printSingleCardTest();
-    deckTester.printEntireDeckTest();
+//    deckTester.printSingleCardTest();
+//    deckTester.printEntireDeckTest();
 
     CardTester cardTester;
-    cardTester.cardConstructorTest();
-    cardTester.printCardTest();
+    cardTester.runTests();
 
 }

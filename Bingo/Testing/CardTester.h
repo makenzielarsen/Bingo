@@ -7,11 +7,7 @@
 
 class CardTester {
 public:
-
-    void cardConstructorTest();
-
-    void printCardTest();
-
+    void runTests();
 };
 
 #endif //BINGO_CARDTESTER_H
