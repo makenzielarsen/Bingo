@@ -18,15 +18,17 @@ private:
 public:
 
     Card(int cardSize, int maxNumber);
+    ~Card(){
+        if (m_gridNumbers.size() != 0) {
+            m_gridNumbers.clear();
+        }
+    }
+
     void print(std::ostream& out) const;
 
     std::vector<int> m_gridNumbers;
 
     bool hasValue(int x);
 };
-
-
-
-
 
 #endif //BINGO_CARD_H

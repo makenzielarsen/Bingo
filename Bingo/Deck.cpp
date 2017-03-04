@@ -17,7 +17,7 @@ Deck::Deck(int cardSize, int cardCount, int numberMax) {
 Deck::~Deck() {
     if (m_cards != nullptr) {
         for (int card = 0; card < m_cardCount; card++) {
-            delete[]m_cards[card];
+            delete m_cards[card];
         }
     }
 }
@@ -33,4 +33,3 @@ void Deck::print(std::ostream& out, int cardIndex) const {
     out << "Card #" << cardIndex << std::endl;
     m_cards[cardIndex - 1]->print(out);
 }
-

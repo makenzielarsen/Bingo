@@ -34,6 +34,4 @@ void DeckTester::runTests() {
     testCardSize();
     testCardCount();
     testMaxNumber();
-
 }
-

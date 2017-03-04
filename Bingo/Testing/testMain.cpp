@@ -25,10 +25,9 @@ int main()
     MenuTester menuTester;
     menuTester.testConstructorAndGetter();
 
-    DeckTester deckTester;
-    deckTester.runTests();
-
     CardTester cardTester;
     cardTester.runTests();
 
+    DeckTester deckTester;
+    deckTester.runTests();
 }
