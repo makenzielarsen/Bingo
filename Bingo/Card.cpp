@@ -23,6 +23,10 @@ Card::Card(int cardSize, int maxNumber) {
     }
 }
 
+Card::~Card() {
+
+}
+
 bool Card::hasValue(int x) {
     for (int i = 0; i < m_gridNumbers.size(); i++) {
         if (m_gridNumbers[i] == x) {

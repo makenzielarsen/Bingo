@@ -18,11 +18,7 @@ private:
 public:
 
     Card(int cardSize, int maxNumber);
-    ~Card(){
-        if (m_gridNumbers.size() != 0) {
-            m_gridNumbers.clear();
-        }
-    }
+    ~Card();
 
     void print(std::ostream& out) const;
 

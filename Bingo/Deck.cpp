@@ -5,19 +5,27 @@
 #include "Deck.h"
 
 Deck::Deck(int cardSize, int cardCount, int numberMax) {
-    if (cardSize >= 3 && cardSize <= 15 && cardCount >= 3 && cardCount <= 1000 &&  numberMax >= (cardSize * cardSize) + 1) {
+
+    if (cardSize >= 3 &&
+        cardSize <= 15 &&
+        cardCount >= 3 &&
+        cardCount <= 10000) {
         m_cardCount = cardCount;
 
         for (int i = 0; i < cardCount; i++) {
             m_cards[i] = new Card(cardSize, numberMax);
         }
+    } else {
+        m_cards[0] = nullptr;
     }
 }
 
 Deck::~Deck() {
     if (m_cards != nullptr) {
         for (int card = 0; card < m_cardCount; card++) {
-            delete m_cards[card];
+            if (m_cards[card] != nullptr) {
+                //m_cards[card]->~Card();
+            }
         }
     }
 }
