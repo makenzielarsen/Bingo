@@ -9,21 +9,25 @@ Deck::Deck(int cardSize, int cardCount, int numberMax) {
         cardCount >= 3 && cardCount <= 10000) {
         m_cardCount = cardCount;
 
+        m_cards = new Card* [m_cardCount];
+
         for (int i = 0; i < cardCount; i++) {
             m_cards[i] = new Card(cardSize, numberMax);
         }
-    } else {
-        m_cards[0] = nullptr;
     }
+    else {
+        m_cards = nullptr;
+        m_cardCount = 0;
+    }
+
 }
 
 Deck::~Deck() {
     if (m_cards != nullptr) {
         for (int card = 0; card < m_cardCount; card++) {
-            if (m_cards[card] != nullptr) {
-                //m_cards[card]->~Card();
-            }
+            delete m_cards[card];
         }
+        delete[] m_cards;
     }
 }
 

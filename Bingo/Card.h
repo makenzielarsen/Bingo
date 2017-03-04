@@ -16,7 +16,6 @@ private:
     int generateRandomNumber (int m_maxNumber);
 
 public:
-
     Card(int cardSize, int maxNumber);
     ~Card();
 

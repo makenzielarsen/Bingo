@@ -14,12 +14,12 @@ void deckConstructorTest() {
 
 void testCardSize() {
     Deck invalidCardSize(2, 12, 15);
-    TEST_NULL(invalidCardSize.m_cards[0])
+    TEST_NULL(invalidCardSize.m_cards)
 }
 
 void testCardCount() {
     Deck invalidCardCount(13, 100000, 14902);
-    TEST_NULL(invalidCardCount.m_cards[0])
+    TEST_NULL(invalidCardCount.m_cards)
 }
 
 
