@@ -3,13 +3,14 @@
 //
 
 #include "Card.h"
+#include "Deck.h"
 #include <iomanip>
 
 int Card::generateRandomNumber(int max) {
     return rand() % max + 1;
 }
 
-Card::Card(int cardSize, int maxNumber) {
+Card::Card(const int cardSize, int maxNumber) {
     m_cardSize = cardSize;
     m_maxNumber = maxNumber;
     int numberOfNumbers = m_cardSize * m_cardSize;
@@ -37,24 +38,30 @@ bool Card::hasValue(int x) {
 }
 
 void Card::print(std::ostream& out) const {
-    for (int column = 0; column < m_cardSize; column++) {
-        out << "+----";
-    }
-    out << "+" << std::endl;
+    if (m_cardSize > 10000 || m_cardSize < 3) {
+        printf("fsckd \n \n", m_cardSize);
+        printf("cardSize is %d\n",m_cardSize);
 
-    int rowOffset = 0;
-    for (int row = 0; row < m_cardSize; row++) {
+    } else {
         for (int column = 0; column < m_cardSize; column++) {
-            out << "|" << std::setw(3) << m_gridNumbers[column + rowOffset] << " ";
+            out << "+----";
         }
-        out << "|" << std::endl;
-        rowOffset += m_cardSize;
-    }
+        out << "+" << std::endl;
 
-    for (int column = 0; column < m_cardSize; column++) {
-        out << "+----";
-    }
-    out << "+" << std::endl;
+        int rowOffset = 0;
+        for (int row = 0; row < m_cardSize; row++) {
+            for (int column = 0; column < m_cardSize; column++) {
+                out << "|" << std::setw(3) << m_gridNumbers[column + rowOffset] << " ";
+            }
+            out << "|" << std::endl;
+            rowOffset += m_cardSize;
+        }
 
-    out << std::endl;
+        for (int column = 0; column < m_cardSize; column++) {
+            out << "+----";
+        }
+        out << "+" << std::endl;
+
+        out << std::endl;
+    }
 }
