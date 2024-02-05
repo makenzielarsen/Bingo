@@ -39,8 +39,6 @@ bool Card::hasValue(int x) {
 
 void Card::print(std::ostream& out) const {
     if (m_cardSize > 10000 || m_cardSize < 3) {
-        printf("fsckd \n \n", m_cardSize);
-        printf("cardSize is %d\n",m_cardSize);
 
     } else {
         for (int column = 0; column < m_cardSize; column++) {
@@ -59,7 +57,7 @@ void Card::print(std::ostream& out) const {
 
         for (int column = 0; column < m_cardSize; column++) {
             out << "+----";
-        }
+        };
         out << "+" << std::endl;
 
         out << std::endl;

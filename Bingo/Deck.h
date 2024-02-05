@@ -18,7 +18,7 @@ public:
 
     int getCardCount() { return m_cardCount; }
 
-    Card* m_cards[];
+    Card** m_cards;
 
     void print(std::ostream &out) const;
     void print(std::ostream &out, int cardIndex) const;
